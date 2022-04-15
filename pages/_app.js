@@ -1,7 +1,21 @@
-import '../styles/globals.css'
+import '../styles/main.css'
+import NextNProgress from 'nextjs-progressbar';
+import { wrapper } from '../store';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+
+function App({ Component, pageProps }) {
+
+    return (
+        <>
+            <Component {...pageProps} />
+            {/* <NextNProgress
+                color="black"
+                startPosition="0.3"
+                stopDelayMs="200"
+                height="3"
+            /> */}
+        </>
+    )
 }
 
-export default MyApp
+export default wrapper.withRedux(App);
